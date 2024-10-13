@@ -1,9 +1,11 @@
-[{
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
+[
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
         "namespace": "android_app",
         "package_name": "tech.pisquare.app",
         "sha256_cert_fingerprints":
-            ["5E:B7:1B:BD:61:31:53:E7:37:3E:E2:4E:D5:18:FD:43:3F:6D:6D:28:E2:B7:C3:ED:86:ED:2F:06:CD:C6:BC:A8"]
+            ["95:58:4B:21:AB:E6:96:27:B1:5A:75:A4:22:DC:76:F5:57:09:01:FC:87:5F:01:1C:AF:3D:18:87:13:7A:7A:89"]
+        }
     }
-}]
+]
