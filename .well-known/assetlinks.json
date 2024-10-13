@@ -1,0 +1,9 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+        "namespace": "android_app",
+        "package_name": "tech.pisquare.app",
+        "sha256_cert_fingerprints":
+            ["5E:B7:1B:BD:61:31:53:E7:37:3E:E2:4E:D5:18:FD:43:3F:6D:6D:28:E2:B7:C3:ED:86:ED:2F:06:CD:C6:BC:A8"]
+    }
+}]

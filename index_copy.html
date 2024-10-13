@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pi-square Deep Link</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #smartBanner {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="smartBanner">
+        <h1>pi-square</h1>
+        <p>Open this page in the pi-square app or download it now!</p>
+        <button id="openApp">Open App</button>
+        <button id="downloadApp">Download App</button>
+    </div>
+
+    <script>
+        // Configuration
+        const config = {
+            iosAppStoreId: 'YOUR_IOS_APP_STORE_ID',
+            androidPackageName: 'tech.pisquare.app',
+            appName: 'pi-square',
+            deepLinkUrl: 'https://www.pi-square.tech/',
+            fallbackUrl: 'https://www.pi-square.tech/'
+        };
+
+        // Detect the user's operating system
+        function getMobileOperatingSystem() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+
+            return "unknown";
+        }
+
+        function openApp() {
+            var os = getMobileOperatingSystem();
+            var appUrl = config.deepLinkUrl; // e.g., https://pi-square.tech/invite:YOUR_INVITE_KEY
+            var storeUrl = config.fallbackUrl;
+
+            if (os === "Android") {
+                window.location.href = `intent://${appUrl}#Intent;scheme=https;package=${config.androidPackageName};end`;
+            } else if (os === "iOS") {
+                window.location.href = appUrl;
+            }
+        }
+
+
+        // Handle downloading the app
+        function downloadApp() {
+            var os = getMobileOperatingSystem();
+            if (os === "Android") {
+                window.location.href = `https://play.google.com/store/apps/details?id=${config.androidPackageName}`;
+            } else if (os === "iOS") {
+                window.location.href = `https://apps.apple.com/app/id${config.iosAppStoreId}`;
+            } else {
+                window.location.href = config.fallbackUrl;
+            }
+        }
+
+        // Add event listeners to buttons
+        document.getElementById('openApp').addEventListener('click', openApp);
+        document.getElementById('downloadApp').addEventListener('click', downloadApp);
+    </script>
+</body>
+</html>
