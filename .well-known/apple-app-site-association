@@ -1,13 +1,14 @@
 {
-  "applinks": {
-      "apps": [],
-      "details": [
-          {
-              "appID": "Q8SW3C3P2X.tech.pisquare.app",
-              "paths": [
-                  "/invite/"
-              ]
-          }
-      ]
-  }
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "Q8SW3C3P2X.tech.pisquare.app",
+                "paths": [ "/*"]
+            }
+        ]
+    },
+    "webcredentials": {
+       "apps": [ "Q8SW3C3P2X.tech.pisquare.app" ]
+    }
 }
