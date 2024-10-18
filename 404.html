@@ -11,26 +11,42 @@
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     </head>
 
+    <style>
+        /* Ensure the body takes up the full width and height without margins */
+        #download {
+            height: 100vh; /* 100% of the viewport height */
+            background-size: cover; /* Ensures the image covers the entire section */
+            background-position: center; /* Keeps the image centered */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+    </style>
+
     <body id="page-top">
         <section id="download" class="download text-center bg-primary"
-                style="background-image: url(&quot;assets/img/backgound-image.png&quot;);color: rgb(255,255,255);background-size: cover;background-repeat: repeat;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 mx-auto">
-                        <h2 class="section-heading" style="color: rgb(230,74,74);">Download our app - Pi-Square</h2>
-                        <p style="color: rgb(230,74,74);">Our app is available on all mobile platforms!</p>
-                        <div class="badges">
-                            <a class="badge-link" href="https://apps.apple.com/in/app/pi-square/id6736675180">
-                                <img src="assets/img/app-store-badge.svg">
-                            </a>
-                            <a class="badge-link" href="https://play.google.com/store/apps/details?id=tech.pisquare.app">
-                                <img src="assets/img/google-play-badge.svg">
-                            </a>
-                        </div>
+            style="position: relative; background-image: url('assets/img/backgound-image.png'); color: rgb(255,255,255);">
+        
+        <!-- Overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 0;"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h2 style="text-align: center;">pi-square</h2>
+                    <p style="text-align: center; font-style: italic;">Enabling digital commerce for small businesses</p>
+                    <p style="text-align: center; font-style: italic; margin-top: 100px;">Download the app now!</p>
+
+                    <div class="badges">
+                        <a class="badge-link" href="https://apps.apple.com/in/app/pi-square/id6736675180">
+                            <img src="assets/img/app-store-badge.svg">
+                        </a>
+                        <a class="badge-link" href="https://play.google.com/store/apps/details?id=tech.pisquare.app">
+                            <img src="assets/img/google-play-badge.svg">
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     </body>
 
     <script>
